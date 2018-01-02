@@ -1,4 +1,11 @@
 const grid = document.querySelector('.grid');
+let currentGrid;
+document.getElementById("clear").onclick = function() {
+  drawGrid(currentGrid);
+};
+document.getElementById("sketch").onclick = function() {
+  drawGrid(prompt("How many rows by columns?", currentGrid));
+};
 
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
@@ -11,6 +18,7 @@ function getRandomColor() {
 
 function drawGrid(gridsize = 16) {
   clearGrid();
+  currentGrid = gridsize;
   document.body.style.setProperty('--columnNumber', gridsize);
   for (i = 0; i < gridsize*gridsize; i++) {
     let newdiv = document.createElement('div');
