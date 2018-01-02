@@ -10,12 +10,7 @@
   border-style: solid;
   box-shadow: -20px 20px 10px #888888;
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr);
-}
-
-.square:hover {
-  background-color: red;
+  grid-template-columns: repeat(var(--columnNumber), 1fr);
 }
 
 .buttons {

@@ -10,6 +10,8 @@ function getRandomColor() {
 }
 
 function drawGrid(gridsize = 16) {
+  clearGrid();
+  document.body.style.setProperty('--columnNumber', gridsize);
   for (i = 0; i < gridsize*gridsize; i++) {
     let newdiv = document.createElement('div');
     newdiv.classList.add('square');
@@ -17,6 +19,12 @@ function drawGrid(gridsize = 16) {
       newdiv.style.backgroundColor = getRandomColor();
     })
     grid.appendChild(newdiv);
+  }
+}
+
+function clearGrid() {
+  while (grid.hasChildNodes()) {
+    grid.removeChild(grid.lastChild);
   }
 }
 
